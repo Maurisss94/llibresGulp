@@ -1,5 +1,8 @@
 var Llibre = require("../../models/llibre");
 var router = require("express").Router();
+var jwt = require("jwt-simple");
+
+
 
 router.get("/", function(req, res, next){
     Llibre.find(function(err, llibres){
@@ -39,9 +42,9 @@ router.get("/:id", function(req, res, next){
        
    });
 });
-router.post("/:id", function(req, res, next){
-    res.status(400).send("Error no es pot fer POST");
-});
+//router.post("/:id", function(req, res, next){
+  //  res.status(400).send("Error no es pot fer POST");
+//});
 router.put("/", function(req, res, next){
     Llibre.findByIdAndUpdate(req.body._id, req.body, function(err){
        if(err){
@@ -63,4 +66,7 @@ router.delete("/:id", function(req, res, next){
     });
    
 });
+
+
+
 module.exports = router;
