@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 app.use(require("./auth"));
@@ -14,6 +15,6 @@ app.use("/", require("./controllers/static"));
 
 
 
-app.listen(8000, function(){
-   console.log("Servidor escolta pel port "+ 8000); 
+app.listen(port, function(){
+   console.log("Servidor escolta pel port "+ port); 
 });
