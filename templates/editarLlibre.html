@@ -1,0 +1,28 @@
+<div class="container">
+    
+<form class="form-horizontal">
+                   
+                    <fieldset>
+                        <legend class="blanco">Edita llibre</legend>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">Títol</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="titolLlibreEdit" placeholder="Títol">
+                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">ISBN</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="isbnLlibreEdit" placeholder="ISBN">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="reset" class="btn btn-default">Cancel·la</button>
+                                <button type="submit" ng-click="actualitzar()" class="btn btn-primary">Envia</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                </div>

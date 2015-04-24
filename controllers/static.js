@@ -5,7 +5,8 @@ var options = {
 };
 
 router.use(express.static(__dirname + "/../public"));
-router.get("/", function(req, res, next){
+router.use(express.static(__dirname + "/../templates"));
+router.get("*", function(req, res, next){
    res.sendFile("index.html", options); 
 });
 

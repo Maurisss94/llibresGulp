@@ -2,23 +2,34 @@ var Llibre = require("../../models/llibre");
 var router = require("express").Router();
 var jwt = require("jwt-simple");
 
-
-
-router.get("/", function(req, res, next){
-    Llibre.find(function(err, llibres){
-       if(err){
-           return next(err);
-       }else{
-           res.status(201).json(llibres);
-       } 
-    });
+router.get('/', function(req, res, next){
+    Llibre.find()
+        .populate('autors')
+        .exec(
+            function(err, llibres){
+               if(err){
+                   return next(err);
+               }else{
+                   
+                   res.status(201).json(llibres);
+               } 
+            });
+    
 });
 router.post("/", function(req, res, next){
+    console.log(req.body);
+    if((req.body.isbn ==null)||(req.body.titol == null)){
+        console.log("No es pot fer POST");
+    }else{
    var llibre = new Llibre({
+       
        isbn: req.body.isbn,
        titol: req.body.titol,
        autors: req.body.autors
+       
+       
    }); 
+        console.log(llibre);
     llibre.save(function(err, llibre){
        if(err){
            return next(err);
@@ -26,6 +37,7 @@ router.post("/", function(req, res, next){
            res.status(201).json(llibre);
        }
     });
+    }
 });
 
 router.delete("/", function(req, res, next){

@@ -1,1 +1,1 @@
-angular.module("app-llibres", ["ngResource"]);
+angular.module("app-llibres", ["ngResource","ngRoute"]);

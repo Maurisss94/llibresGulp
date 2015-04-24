@@ -1,0 +1,16 @@
+              
+<div class="container"> 
+    <div id="llistarLlibres" class="col-md-12">
+                <fieldset>
+                    <legend class="blanco">Llista d'autors</legend>
+                </fieldset>
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="autor in autors">
+                        <strong>{{autor.nom}} {{autor.cognom}}</strong>
+                        <p>{{autor.descripcio}}</p>
+                        <button ng-if="currentUser" ng-click="editar(autor)" class="btn btn-primary" >Edita</button>
+                        <button ng-if="currentUser" ng-click="esborrar(autor)" class="btn btn-primary">Esborrar</button>
+                    </li>
+                </ul>
+    </div>
+</div>

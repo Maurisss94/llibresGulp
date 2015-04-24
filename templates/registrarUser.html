@@ -1,0 +1,32 @@
+<div class="container">
+   <form class="form-horizontal">
+                    <fieldset>
+                        <legend class="blanco">Registrar usuari</legend>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">Usuari</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="usuari" placeholder="Usuari">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">Password</label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" ng-model="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="reset" class="btn btn-default">Cancel·la</button>
+                                <button type="submit" ng-click="crearUsuari(usuari, password)" class="btn btn-primary">Envia</button>
+                            </div>
+                        </div>
+                <div  ng-if="error" class="alert alert-danger">
+                  <strong>{{error}}</strong>
+                </div>
+                   <div  ng-if="creat" class="alert alert-success">
+                  <strong>{{creat}}</strong>
+                </div>
+                    </fieldset>
+                </form>
+    
+</div>

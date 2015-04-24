@@ -1,0 +1,31 @@
+<div class="container">
+               <form class="form-horizontal">
+                <fieldset>
+                        <legend class="blanco">Llibre nou</legend>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">Nom</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="nomAutorNou" placeholder="Nom">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">Cognom</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="cognomAutorNou" placeholder="Cognom">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail" class="col-md-2 control-label blanco">Descripció</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="descripcioAutorNou" placeholder="Descripció">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="reset" class="btn btn-default">Cancel·la</button>
+                                <button ng-click="afegirAutor()" class="btn btn-primary">Envia</button>
+                            </div>
+                        </div>
+                    </fieldset>
+    </form>
+</div>

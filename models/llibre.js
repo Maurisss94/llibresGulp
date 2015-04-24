@@ -9,10 +9,10 @@ var Llibre = db.model("Llibre", {
         type: String,
         required: true
     },
-    autors: {
-        type: [String],
-        required: true
-    },
+    autors:[{
+        type: db.Schema.Types.ObjectId,
+        ref: 'Autor'
+    }],
     date: {
         type: String,
         required: true,
