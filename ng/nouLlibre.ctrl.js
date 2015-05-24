@@ -1,6 +1,7 @@
 angular.module('app-llibres')
         .controller("nouLlibreController", function($scope, $location, LlibresFactory, AutorsFactory){
     
+    var socket = io().connect();
     $scope.autors = [];
     AutorsFactory.srv.query(function(autor){
        $scope.autors = autor; 
